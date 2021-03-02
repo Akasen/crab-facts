@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-areas:
+    "header"
+    "content";
+
+  grid-template-rows: 250px 250px;
+}
