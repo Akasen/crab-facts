@@ -1,8 +1,9 @@
+require('dotenv').config()
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-
-const items = require('./routes/api/items');
+const Fact = require('./routes/fact');
 
 const app = express();
 
@@ -10,7 +11,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // DB Config
-const db = require('./config/keys').monogoURI
+const db = process.env.DB_API_KEY
 
 // Connect to mongo
 mongoose
@@ -23,7 +24,7 @@ mongoose
     .catch(err => console.log(err));
 
 // Use Routes
-app.use('/api/items', items);
+app.use('/facts', Fact);
 
 const port = process.env.PORT || 5000;
 
