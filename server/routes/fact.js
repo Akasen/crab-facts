@@ -8,7 +8,7 @@ const Fact = require('../models/Fact');
 // @route   GET /facts
 // @desc    Get Facts
 // @access  Public
-router.get('/', (req, res) => {
+router.get('/list_all_facts', (req, res) => {
     Fact.find()
         .then(facts => res.json(facts))
 });
@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 // @route   POST /facts
 // @desc    Create A Fact
 // @access  Public
-router.post('/list_all_facts', (req, res) => {
+router.post('/savefact', (req, res) => {
     const newFact = new Fact({
         message: req.body.message
     });
@@ -36,6 +36,7 @@ router.get('/randomfact', (req, res) => {
 
         Fact.findOne().skip(random).exec().then(fact => res.json(fact))
     });
+    console.log("FACT GOT");
 })
 
 module.exports = router;
