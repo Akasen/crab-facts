@@ -7,6 +7,8 @@ function Facts(props) {
 
     const [fact, setFact] = useState("CLICK THE BUTTON FOR A FACT");
 
+    /*
+    // Leftover code
     const factsList = [
         "CRABS ARE ALLERGIC TO KINDNESS, WHICH IS WHY THEY WILL ATTACK WHEN SHOWN LOVE",
         "I AM A RANDOM FACT",
@@ -15,20 +17,29 @@ function Facts(props) {
         "CRUSTACEAN ANGER IS THE STRONGEST ANGER IN EXISTENCE"
     ]
 
-    function changeRandomNumber(){
+    function changeRandomNumber() {
         return Math.floor(Math.random() * factsList.length);
     }
-    
+
     function getRandomFact() {
-        return(factsList[changeRandomNumber()]);
+        return (factsList[changeRandomNumber()]);
     }
+    */
+
+    function fetchFact() {
+        fetch('/facts/randomfact')
+            .then(resp => resp.json())
+            .then(data => { setFact(data.message) })
+    }
+
+    //const randomFACT = fetchFact();
 
     return (
         <div className="factsContainer">
             <div className="facts">
                 {fact}
             </div>
-                <input onClick= {() => setFact(getRandomFact)} type="button" className="newFactBtn" value="Get New Fact"/>
+            <input onClick={() => { fetchFact() }} type="button" className="newFactBtn" value="Get New Fact" />
         </div>
     )
 }
