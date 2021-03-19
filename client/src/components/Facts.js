@@ -29,7 +29,11 @@ function Facts(props) {
     function fetchFact() {
         fetch('/facts/randomfact')
             .then(resp => resp.json())
-            .then(data => { setFact(data.message) })
+            .then(data => {
+                // Check if the Fact received is the same as the fact currently displayed 
+                if (data.message === fact) { fetchFact() }
+                setFact(data.message)
+            })
     }
 
     //const randomFACT = fetchFact();
