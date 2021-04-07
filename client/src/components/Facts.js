@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./css/facts.css";
 
-
-
 function Facts(props) {
 
     const [fact, setFact] = useState("CLICK THE BUTTON FOR A FACT");
@@ -36,14 +34,16 @@ function Facts(props) {
             })
     }
 
-    //const randomFACT = fetchFact();
-
     return (
-        <div className="factsContainer">
-            <div className="facts">
-                {fact}
+        <div className="masterContainer">
+            <div className="factsContainer">
+                <div className="facts" >
+                    {fact}
+                </div>
             </div>
-            <input onClick={() => { fetchFact() }} type="button" className="newFactBtn" value="Get New Fact" />
+            <div className="btnContainer">
+                <input onClick={() => { fetchFact() }} type="button" className="newFactBtn" value="Get New Fact" />
+            </div>
         </div>
     )
 }

@@ -1,20 +1,24 @@
+@font-face {
+  font-family: 'Show-Up';
+  src: url('../fonts/show-up-font/ShowUpFreeTrial-mLVWj.otf');
+} 
+
 body {
   margin: 0;
   padding: 0;
 }
 
 .headertext {
+  font-family: 'Show-Up';
   position: relative;
-  top: 1em;
-  width: auto;
   text-align: center;
   font-size: 50px;
 }
 
 .header {
+  display: grid;
   align-items: center;
-  justify-content: center;
-  height: 50%;
+  width: 100vw;
   grid-area: header;
   /* background by SVGBackgrounds.com */
   background-color: #ee5522;
@@ -22,4 +26,10 @@ body {
   background-attachment: fixed;
   background-size: cover;
   /* background by SVGBackgrounds.com */
+}
+
+@media(max-width: 530px){
+  .headertext{
+    font-size: 35px;
+  }
 }

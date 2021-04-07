@@ -36,7 +36,7 @@ router.get('/randomfact', (req, res) => {
 
         Fact.findOne().skip(random).exec().then(fact => res.json(fact))
     });
-    console.log("FACT GOT");
+    //console.log("FACT GOT");
 })
 
 module.exports = router;

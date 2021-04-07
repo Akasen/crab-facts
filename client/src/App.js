@@ -5,11 +5,13 @@ import Facts from './components/Facts';
 
 import './components/css/layout.css'
 
+
+
 const App = () => {
     return (
         <div className="container">
-            <Header/>
-            <Facts/>
+            <Header />
+            <Facts />
         </div>
     )
 }

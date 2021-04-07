@@ -1,25 +1,37 @@
+@font-face{
+  font-family: 'Coconutz';
+   src: url('../fonts/coconutz-font/Coconutz-EaZjl.ttf');
+  }
+
 body {
   background-color: beige;
 }
 
-.factsContainer {
+.masterContainer {
   display: grid;
-  grid-template-areas:
-    "fact"
-    "button";
-  grid-template-rows: 1fr auto;
+  place-items: center;
+}
+
+.factsContainer{
+  font-family: 'Coconutz';
+  display: grid;
+  align-items: center;
+  margin: auto auto auto auto;  
+  width: min(80vw, 600px);
+  height: max(50vh, 500px);
+  
 }
 
 .facts {
   text-align: center;
-  font-size: 50px;
-  position: relative;
-  margin: 0em 10em 0em 10em;
+  font-size: max(6vh, 2em);
+}
+
+.btnContainer {
+  padding: auto;
 }
 
 .newFactBtn {
-  padding-top: 1%;
-  font-size: 25px;
   background-color: #4caf50;
   border: none;
   color: white;
@@ -27,8 +39,7 @@ body {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 26px;
-  margin: 2em 10em 0em 31em;
+  font-size: min(5vw, 26px);
   cursor: pointer;
-  width: 250px;
+  width: min(50vw, 250px);
 }

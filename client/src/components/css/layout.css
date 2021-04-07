@@ -5,10 +5,24 @@ body {
 
 .container {
   display: grid;
-  height: 100vh;
+  /*height: 100vh;*/
+  width: auto;
   grid-template-areas:
     "header"
     "content";
 
-  grid-template-rows: 250px 250px;
+  grid-template-rows: 100px 0px;
 }
+
+/*
+@media(max-width: 1280px){
+  .container{
+    display: grid;
+
+    grid-template-areas:
+      "header"
+      "content";
+    grid-template-rows: 250px 1em;
+  }
+}
+*/
